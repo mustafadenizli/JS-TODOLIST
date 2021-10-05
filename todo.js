@@ -2,15 +2,16 @@
 
 //kapat spanı oluşturulup her bir liste öğesine eklendi.
 
-let liDom = document.getElementsByTagName("li");
+
+let liDom = document.getElementsByTagName("li");  //li elementine erişme
 
 let index = 0
-for(; index < liDom.length; index++){
-    let span = document.createElement("span");
+for(; index < liDom.length; index++){      //kaç tane li varsa dön
+    let span = document.createElement("span");  //span oluştur
     let txt = document.createTextNode("\u00D7");  //x oluşturma
-    span.className = "close";
-    span.appendChild(txt);
-    liDom[index].appendChild(span);
+    span.className = "close";   //class name ver
+    span.appendChild(txt);  //span'a ekle
+    liDom[index].appendChild(span);  //listeye ekle her birini
 
 }
 
@@ -48,7 +49,10 @@ function newElement(){
      if(inputDomValue === '' )   //boş ise text 
      {  
          console.log("bir şeyler girmelisin!!!")  //hata mesajı verdik
-         alert("bir şeyler girmelisin!!!")
+        //  alert("bir şeyler girmelisin!!!")
+        //TOAST kullanımı
+          $('.toast').toast('show')
+           
      }else {
          document.querySelector("#list").appendChild(liDom); //boş degilse ekledik
      }
